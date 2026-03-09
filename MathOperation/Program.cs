@@ -1,4 +1,20 @@
 using System;
 
-// README.md를 읽고 코드를 작성하세요.
-Console.WriteLine("코드를 작성하세요.");
+static int Add(int x, int y) => x + y;
+static int Subtract(int x, int y) => x - y;
+static int Multiply(int x, int y) => x * y;
+static int Divide(int x, int y) => x / y;
+Console.WriteLine("=== 사칙연산 대리자 ===");
+MathOp math = Add;
+Console.WriteLine("[덧셈]");
+Console.WriteLine($"20 + 4 = {math(20,4)}");
+math = Subtract;
+Console.WriteLine("[뺄셈]");
+Console.WriteLine($"20 - 4 = {math(20, 4)}");
+math = Multiply;
+Console.WriteLine("[곱셈]");
+Console.WriteLine($"20 * 4 = {math(20, 4)}");
+math = Divide;
+Console.WriteLine("[나눗셈]");
+Console.WriteLine($"20 / 4 = {math(20, 4)}");
+delegate int MathOp(int x, int y);
